@@ -1,0 +1,49 @@
+﻿@* ── 1. TOP INFO BAR ── *@
+<div class="hb-infobar">
+  <div class="hb-container infobar-inner">
+    <div class="infobar-right">
+      <span class="info-item">
+        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        8061 St Clair Ave, North Hollywood, CA 91605
+      </span>
+      <span class="info-sep">|</span>
+      <span class="info-item">
+        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:+17472717001">(747) 271-7001</a>
+      </span>
+      <span class="info-sep">|</span>
+      <span class="info-item">
+        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:info@healingbridgehealth.com">info@healingbridgehealth.com</a>
+      </span>
+      <span class="info-sep">|</span>
+      <span class="info-item lang-toggle">
+        <a href="#" class="lang-link active" data-lang="en" onclick="window.HBLang.set('en'); return false;">EN</a>
+        <span class="lang-slash">/</span>
+        <a href="#" class="lang-link" data-lang="es" onclick="window.HBLang.set('es'); return false;">ES</a>
+      </span>
+    </div>
+  </div>
+</div>
+
+@* ── 2. NAVBAR — logo left, nav links right ── *@
+<nav class="hb-navbar">
+  <div class="hb-container navbar-inner">
+    <a href="/" class="navbar-logo">
+      <img src="/Media/logo forest green.jpg" alt="Healing Bridge Health" />
+    </a>
+
+    <button class="nav-toggle" type="button" onclick="this.closest('.hb-navbar').querySelector('.navbar-menu').classList.toggle('open')" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="navbar-menu">
+      <a class="nav-link" href="/" data-i18n="nav.home">Home</a>
+      <a class="nav-link" href="/about" data-i18n="nav.about">About Us</a>
+      <a class="nav-link" href="/services" data-i18n="nav.services">Services</a>
+      <a class="nav-link" href="/amenities" data-i18n="nav.amenities">Amenities</a>
+      <a class="nav-link" href="/gallery" data-i18n="nav.gallery">Gallery</a>
+      <a class="nav-link nav-link--cta" href="/contact" data-i18n="nav.contact">Contact Us</a>
+    </div>
+  </div>
+</nav>

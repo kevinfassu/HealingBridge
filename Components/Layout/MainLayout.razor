@@ -1,0 +1,126 @@
+@inherits LayoutComponentBase
+@inject BlazorApp.Services.EmailService EmailService
+
+<NavMenu />
+<main class="hb-main">
+    @Body
+</main>
+
+@* ── FOOTER ── *@
+<footer id="footer-contact" class="hb-footer">
+  <div class="hb-container footer-grid">
+
+    @* Column 1: Logo + address + socials *@
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">
+        <img src="/Media/logo forest green.jpg" alt="Healing Bridge Health" />
+      </a>
+      <address class="footer-addr">
+        8061 St Clair Ave<br />
+        North Hollywood, CA 91605<br />
+        <a href="tel:+17472717001">(747) 271-7001</a><br />
+        <a href="mailto:info@healingbridgehealth.com">info@healingbridgehealth.com</a>
+      </address>
+      <div class="footer-socials">
+        <a href="#" class="social-icon js-no-nav" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" class="social-icon js-no-nav" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" class="social-icon js-no-nav" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    @* Column 2: Quick Links *@
+    <div class="footer-links">
+      <h4 class="footer-heading" data-i18n="footer.links_heading">Quick Links</h4>
+      <ul>
+        <li><a href="/"          data-i18n="nav.home">Home</a></li>
+        <li><a href="/about"     data-i18n="nav.about">About Us</a></li>
+        <li><a href="/services"  data-i18n="nav.services">Services</a></li>
+        <li><a href="/amenities" data-i18n="nav.amenities">Amenities</a></li>
+        <li><a href="/gallery"   data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="/contact"   data-i18n="nav.contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    @* Column 3: Contact Form *@
+    <div class="footer-form-wrap">
+      <h4 class="footer-heading" data-i18n="footer.form_heading">Get in Touch</h4>
+
+      @if (FooterSent)
+      {
+        <div class="footer-success">
+          <div class="footer-success-icon">✓</div>
+          <p>Thanks — we'll be in touch shortly!</p>
+        </div>
+      }
+      else
+      {
+        <form class="footer-form" @onsubmit="HandleFooterSubmit" @onsubmit:preventDefault>
+          <input type="text"  @bind="FooterName"    data-i18n-placeholder="footer.ph_name"  placeholder="Your Name"      required />
+          <input type="email" @bind="FooterEmail"   data-i18n-placeholder="footer.ph_email" placeholder="Email Address"  required />
+          <textarea rows="3"  @bind="FooterMessage" data-i18n-placeholder="footer.ph_msg"   placeholder="Your Message"   required></textarea>
+          @if (!string.IsNullOrEmpty(FooterError))
+          {
+            <p class="footer-error">@FooterError</p>
+          }
+          <button type="submit" class="btn-submit" disabled="@FooterSubmitting" data-i18n="footer.btn_send">
+            @(FooterSubmitting ? "Sending…" : "Send Message")
+          </button>
+        </form>
+      }
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="hb-container">
+      <p data-i18n="footer.copy">&copy; @DateTime.Now.Year Healing Bridge Health Inc. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+@code {
+  private string FooterName      = "";
+  private string FooterEmail     = "";
+  private string FooterMessage   = "";
+  private string FooterError     = "";
+  private bool   FooterSubmitting = false;
+  private bool   FooterSent       = false;
+
+  private async Task HandleFooterSubmit()
+  {
+    FooterError = "";
+
+    if (string.IsNullOrWhiteSpace(FooterName))
+      { FooterError = "Please enter your name."; return; }
+    if (string.IsNullOrWhiteSpace(FooterEmail) || !FooterEmail.Contains("@"))
+      { FooterError = "Please enter a valid email address."; return; }
+    if (string.IsNullOrWhiteSpace(FooterMessage))
+      { FooterError = "Please enter a message."; return; }
+
+    FooterSubmitting = true;
+
+    try
+    {
+      var success = await EmailService.SendContactFormAsync(
+        FooterName, FooterEmail, "", "Footer contact form", FooterMessage);
+
+      if (success)
+        FooterSent = true;
+      else
+        FooterError = "Something went wrong. Please call us at (747) 271-7001.";
+    }
+    catch
+    {
+      FooterError = "Something went wrong. Please call us at (747) 271-7001.";
+    }
+    finally
+    {
+      FooterSubmitting = false;
+    }
+  }
+}

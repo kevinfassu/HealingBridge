@@ -1,0 +1,70 @@
+/* ====== Brand Tokens ====== */
+:root {
+  --brand: #1a6b4a;        /* forest green */
+  --brand-600: #15804d;
+  --brand-700: #117a42;
+  --brand-800: #0d5c32;
+  --accent: #caa24a;        /* warm gold */
+  --ink: #1f2937;
+  --ink-dim: #6b7280;
+  --surface: #ffffff;
+  --surface-2: #f7f7f7;
+  --radius-lg: 1rem;
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.12);
+  --page-max: 1180px;
+  --page-gutter: 24px;
+}
+
+/* ====== Base ====== */
+html, body { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--surface);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+img { max-width: 100%; height: auto; }
+
+/* ====== Layout rail ====== */
+.hb-container {
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+/* ====== Reveal animation ====== */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.in { opacity: 1; transform: none; }
+
+/* ====== Kill Blazor template chrome ====== */
+.sidebar, .top-row, .page {
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* ====== Gallery — global (JS toggles these classes at runtime) ====== */
+.gallery-item.is-hidden { display: none !important; }
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.lightbox.is-open { display: flex; }

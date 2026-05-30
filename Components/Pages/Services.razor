@@ -1,0 +1,637 @@
+@page "/services"
+<PageTitle>Services — Healing Bridge Health</PageTitle>
+
+@* ── PAGE HERO ── *@
+<section class="page-hero">
+  <div class="hb-container page-hero-inner">
+    <p class="hero-label" data-i18n="services.label">WHAT WE OFFER</p>
+    <h1 class="page-hero-title" data-i18n="services.title">Our Programs &amp; Services</h1>
+    <p class="page-hero-sub" data-i18n="services.sub">
+      A continuum of high-quality, cost-effective post-acute care and rehabilitation for people of all ages
+      with complex medical needs.
+    </p>
+  </div>
+</section>
+
+@* ── INTRO ── *@
+<section class="sect sect-svc-intro">
+  <div class="hb-container svc-intro-inner">
+    <p class="sect-body" data-i18n="services.intro">
+      Healing Bridge Health, Inc. provides a continuum of high-quality, cost-effective post-acute care and
+      rehabilitation options to people of all ages with brain and spinal cord injury, ventilator dependence,
+      and other life-altering injuries and medically complex illnesses. We offer a distinctive service delivery
+      model—merging an experienced and skilled health care and rehabilitation team with state-of-the-art
+      technology in community-based program settings designed to meet the unique needs of those we serve at
+      every stage of their recovery.
+    </p>
+  </div>
+</section>
+
+@* ── CARE CONTINUUM BANNER ── *@
+<section class="sect sect-continuum alt">
+  <div class="hb-container">
+    <div class="services-header">
+      <p class="sect-label" data-i18n="services.cont_label">Where We Fit</p>
+      <h2 class="sect-heading" data-i18n="services.cont_heading">The Right Level of Care, Right When You Need It</h2>
+      <p class="services-subheading" data-i18n="services.cont_sub">
+        A Congregate Living Health Facility delivers care that's more intensive than a skilled nursing facility,
+        but less intensive than a hospital ICU — the perfect fit for patients who need skilled clinical attention
+        without the cost or sterility of a hospital setting.
+      </p>
+    </div>
+
+    <div class="continuum-line">
+      <div class="continuum-step">
+        <div class="continuum-dot"></div>
+        <h4 data-i18n="services.cont1_t">Acute Hospital</h4>
+        <p data-i18n="services.cont1_b">ICU and acute medical care during a critical illness or injury.</p>
+      </div>
+      <div class="continuum-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </div>
+      <div class="continuum-step is-current">
+        <div class="continuum-dot"></div>
+        <h4 data-i18n="services.cont2_t">Healing Bridge Health (CLHF)</h4>
+        <p data-i18n="services.cont2_b">24/7 skilled nursing in a home-like setting, with sophisticated equipment for complex needs.</p>
+      </div>
+      <div class="continuum-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </div>
+      <div class="continuum-step">
+        <div class="continuum-dot"></div>
+        <h4 data-i18n="services.cont3_t">Home or Long-Term Setting</h4>
+        <p data-i18n="services.cont3_b">A safe, supported transition back to daily life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+@* ── PROGRAMS GRID — quick-scan cards that anchor down ── *@
+<section id="programs" class="sect sect-programs">
+  <div class="hb-container">
+    <div class="services-header">
+      <p class="sect-label" data-i18n="services.programs_label">Our Programs</p>
+      <h2 class="sect-heading" data-i18n="services.programs_heading">Specialized Care Programs</h2>
+      <p class="services-subheading" data-i18n="services.programs_sub">
+        Click any card below to jump to a deeper look at who it serves, what's included, and the equipment we use.
+      </p>
+    </div>
+
+    <div class="programs-grid">
+      <a href="#prog-spinal" class="program-card">
+        <div class="program-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M32 6v52"/><circle cx="32" cy="14" r="3"/><circle cx="32" cy="26" r="3"/><circle cx="32" cy="38" r="3"/><circle cx="32" cy="50" r="3"/><path d="M22 14h20M22 26h20M22 38h20M22 50h20" opacity=".4"/></svg></div>
+        <h3 class="program-title" data-i18n="services.p1_title">Spinal Cord Injuries</h3>
+        <p class="program-body" data-i18n="services.p1_body">All levels — comprehensive care and rehabilitation.</p>
+        <span class="program-link" data-i18n="services.learn_more">Learn more →</span>
+      </a>
+      <a href="#prog-wound" class="program-card">
+        <div class="program-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M32 8c-8 0-14 6-14 14 0 10 14 24 14 24s14-14 14-24c0-8-6-14-14-14z"/><circle cx="32" cy="22" r="5"/></svg></div>
+        <h3 class="program-title" data-i18n="services.p2_title">Complex Wound Care</h3>
+        <p class="program-body" data-i18n="services.p2_body">Including VAC therapy and advanced wound management.</p>
+        <span class="program-link" data-i18n="services.learn_more">Learn more →</span>
+      </a>
+      <a href="#prog-pulmonary" class="program-card">
+        <div class="program-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M32 14v40"/><path d="M22 24c-6 0-10 6-10 14s4 14 10 14 10-6 10-14"/><path d="M42 24c6 0 10 6 10 14s-4 14-10 14-10-6-10-14"/></svg></div>
+        <h3 class="program-title" data-i18n="services.p3_title">Pulmonary &amp; Ventilator</h3>
+        <p class="program-body" data-i18n="services.p3_body">Vent care &amp; weaning, trach care, suctioning, and de-cannulation.</p>
+        <span class="program-link" data-i18n="services.learn_more">Learn more →</span>
+      </a>
+      <a href="#prog-neuro" class="program-card">
+        <div class="program-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="20" r="8"/><path d="M32 28v12"/><path d="M16 50c4-6 10-10 16-10s12 4 16 10"/><path d="M22 38l-6 6M42 38l6 6" opacity=".5"/></svg></div>
+        <h3 class="program-title" data-i18n="services.p4_title">Neuromuscular Disorders</h3>
+        <p class="program-body" data-i18n="services.p4_body">Including Guillain-Barré, Muscular Dystrophy, Myasthenia Gravis, and ALS.</p>
+        <span class="program-link" data-i18n="services.learn_more">Learn more →</span>
+      </a>
+      <a href="#prog-medical" class="program-card">
+        <div class="program-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="14" width="36" height="36" rx="4"/><path d="M32 22v20M22 32h20"/></svg></div>
+        <h3 class="program-title" data-i18n="services.p5_title">Medically Complex Cases</h3>
+        <p class="program-body" data-i18n="services.p5_body">Multiple trauma/fractures, multiple IV antibiotic therapy, and G/J-feedings.</p>
+        <span class="program-link" data-i18n="services.learn_more">Learn more →</span>
+      </a>
+      <a href="#prog-brain" class="program-card">
+        <div class="program-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16c-6 0-10 4-10 10 0 4 2 6 2 10s-2 6-2 10c0 2 2 4 4 4h28c2 0 4-2 4-4 0-4-2-6-2-10s2-6 2-10c0-6-4-10-10-10-2 0-4 1-6 3-2-2-4-3-6-3-2 0-4 1-6 3-2-2-4-3-4-3z"/><path d="M32 24v16M28 28h8M28 36h8" opacity=".5"/></svg></div>
+        <h3 class="program-title" data-i18n="services.p6_title">Acquired Brain Injuries</h3>
+        <p class="program-body" data-i18n="services.p6_body">Traumatic, anoxic, aneurysms/bleed, and cerebral vascular accidents.</p>
+        <span class="program-link" data-i18n="services.learn_more">Learn more →</span>
+      </a>
+      <a href="#prog-ortho" class="program-card">
+        <div class="program-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l8 8M40 40l8 8M16 48l8-8M40 24l8-8"/><circle cx="20" cy="20" r="4"/><circle cx="44" cy="20" r="4"/><circle cx="20" cy="44" r="4"/><circle cx="44" cy="44" r="4"/><path d="M24 24l16 16"/></svg></div>
+        <h3 class="program-title" data-i18n="services.p7_title">Orthopedically Complex Cases</h3>
+        <p class="program-body" data-i18n="services.p7_body">Including multiple trauma and fractures.</p>
+        <span class="program-link" data-i18n="services.learn_more">Learn more →</span>
+      </a>
+      <a href="#prog-rehab" class="program-card">
+        <div class="program-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="14" r="4"/><path d="M20 18v18l-6 16M20 36l8 6 4 12M28 28l10-2 8 8"/></svg></div>
+        <h3 class="program-title" data-i18n="services.p8_title">Rehabilitation</h3>
+        <p class="program-body" data-i18n="services.p8_body">Licensed PT, OT, speech therapists, plus social services and community integration.</p>
+        <span class="program-link" data-i18n="services.learn_more">Learn more →</span>
+      </a>
+      <a href="#prog-coord" class="program-card">
+        <div class="program-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="6"/><circle cx="14" cy="14" r="5"/><circle cx="50" cy="14" r="5"/><circle cx="14" cy="50" r="5"/><circle cx="50" cy="50" r="5"/><path d="M18 18l10 10M46 18L36 28M18 46l10-10M46 46L36 36"/></svg></div>
+        <h3 class="program-title" data-i18n="services.p9_title">Care Coordination</h3>
+        <p class="program-body" data-i18n="services.p9_body">Seamless interdisciplinary collaboration between physicians, nurses, therapists, and families.</p>
+        <span class="program-link" data-i18n="services.learn_more">Learn more →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+@* ── DETAILED PROGRAM SECTIONS — the 5 big ones ── *@
+
+@* DETAIL: Spinal Cord *@
+<section id="prog-spinal" class="sect sect-prog-detail">
+  <div class="hb-container">
+    <div class="prog-detail-header">
+      <span class="prog-detail-tag" data-i18n="services.tag_program">Program</span>
+      <h2 class="sect-heading" data-i18n="services.d1_heading">Spinal Cord Injury Care</h2>
+      <p class="prog-detail-lead" data-i18n="services.d1_lead">Comprehensive recovery and rehabilitation for spinal cord injuries at all levels — from cervical to lumbar, complete to incomplete.</p>
+    </div>
+    <div class="prog-detail-grid">
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_who">Who It's For</h4>
+        <p data-i18n="services.d1_who">Patients recovering from traumatic or non-traumatic spinal cord injuries who need 24/7 skilled care, complex rehabilitation, and a safe transition back to home or long-term care.</p>
+      </div>
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_includes">What's Included</h4>
+        <ul class="prog-detail-list">
+          <li data-i18n="services.d1_i1">24/7 skilled nursing care &amp; monitoring</li>
+          <li data-i18n="services.d1_i2">Pressure injury prevention &amp; turning protocols</li>
+          <li data-i18n="services.d1_i3">Bowel &amp; bladder management programs</li>
+          <li data-i18n="services.d1_i4">Physical, occupational, &amp; respiratory therapy</li>
+          <li data-i18n="services.d1_i5">Mobility training &amp; assistive technology</li>
+          <li data-i18n="services.d1_i6">Family education &amp; discharge planning</li>
+        </ul>
+      </div>
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_equipment">Equipment Used</h4>
+        <ul class="prog-detail-list">
+          <li data-i18n="services.d1_e1">Hill-Rom hospital beds with pressure-relief surfaces</li>
+          <li data-i18n="services.d1_e2">Hoyer lifts for safe patient transfers</li>
+          <li data-i18n="services.d1_e3">Stryker rehabilitation equipment</li>
+          <li data-i18n="services.d1_e4">Specialized wheelchairs &amp; mobility aids</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+@* DETAIL: Wound Care *@
+<section id="prog-wound" class="sect sect-prog-detail alt">
+  <div class="hb-container">
+    <div class="prog-detail-header">
+      <span class="prog-detail-tag" data-i18n="services.tag_program">Program</span>
+      <h2 class="sect-heading" data-i18n="services.d2_heading">Complex Wound Care</h2>
+      <p class="prog-detail-lead" data-i18n="services.d2_lead">Advanced wound management led by our certified Wound Care Specialist, including VAC therapy and proven healing protocols.</p>
+    </div>
+    <div class="prog-detail-grid">
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_who">Who It's For</h4>
+        <p data-i18n="services.d2_who">Patients with stage III/IV pressure injuries, surgical wounds, diabetic ulcers, traumatic wounds, or any complex wound that requires specialized assessment and treatment.</p>
+      </div>
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_includes">What's Included</h4>
+        <ul class="prog-detail-list">
+          <li data-i18n="services.d2_i1">Certified wound care nurse on staff</li>
+          <li data-i18n="services.d2_i2">VAC (Vacuum-Assisted Closure) therapy</li>
+          <li data-i18n="services.d2_i3">Advanced dressings &amp; debridement</li>
+          <li data-i18n="services.d2_i4">Infection prevention protocols</li>
+          <li data-i18n="services.d2_i5">Nutrition support for wound healing</li>
+          <li data-i18n="services.d2_i6">Weekly wound assessment &amp; documentation</li>
+        </ul>
+      </div>
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_equipment">Equipment Used</h4>
+        <ul class="prog-detail-list">
+          <li data-i18n="services.d2_e1">VAC therapy systems</li>
+          <li data-i18n="services.d2_e2">Pressure-relief mattresses (Hill-Rom)</li>
+          <li data-i18n="services.d2_e3">Sterile wound assessment &amp; treatment supplies</li>
+          <li data-i18n="services.d2_e4">Hoyer lifts to safely reposition patients</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+@* DETAIL: Pulmonary *@
+<section id="prog-pulmonary" class="sect sect-prog-detail">
+  <div class="hb-container">
+    <div class="prog-detail-header">
+      <span class="prog-detail-tag" data-i18n="services.tag_program">Program</span>
+      <h2 class="sect-heading" data-i18n="services.d3_heading">Pulmonary &amp; Ventilator Care</h2>
+      <p class="prog-detail-lead" data-i18n="services.d3_lead">Specialized respiratory care for patients on ventilators, with tracheostomies, or recovering from pulmonary events — led by a dedicated Respiratory Therapist.</p>
+    </div>
+    <div class="prog-detail-grid">
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_who">Who It's For</h4>
+        <p data-i18n="services.d3_who">Ventilator-dependent patients, those with tracheostomies, recovering from respiratory failure, COPD exacerbations, ARDS, pneumonia, or other complex pulmonary conditions.</p>
+      </div>
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_includes">What's Included</h4>
+        <ul class="prog-detail-list">
+          <li data-i18n="services.d3_i1">24/7 ventilator monitoring &amp; management</li>
+          <li data-i18n="services.d3_i2">Ventilator weaning protocols</li>
+          <li data-i18n="services.d3_i3">Tracheostomy care &amp; de-cannulation</li>
+          <li data-i18n="services.d3_i4">Suctioning &amp; airway clearance</li>
+          <li data-i18n="services.d3_i5">Oxygen therapy &amp; pulse oximetry</li>
+          <li data-i18n="services.d3_i6">Respiratory therapy &amp; breathing exercises</li>
+        </ul>
+      </div>
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_equipment">Equipment Used</h4>
+        <ul class="prog-detail-list">
+          <li data-i18n="services.d3_e1">Modern ventilators with weaning capability</li>
+          <li data-i18n="services.d3_e2">Suction equipment at every bedside</li>
+          <li data-i18n="services.d3_e3">Oxygen concentrators &amp; supplemental O₂</li>
+          <li data-i18n="services.d3_e4">Pulse oximeters &amp; respiratory monitors</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+@* DETAIL: Brain Injury *@
+<section id="prog-brain" class="sect sect-prog-detail alt">
+  <div class="hb-container">
+    <div class="prog-detail-header">
+      <span class="prog-detail-tag" data-i18n="services.tag_program">Program</span>
+      <h2 class="sect-heading" data-i18n="services.d4_heading">Acquired Brain Injury Care</h2>
+      <p class="prog-detail-lead" data-i18n="services.d4_lead">Patient and family-centered care for traumatic brain injury, stroke, anoxic injury, aneurysm, and other cerebrovascular events.</p>
+    </div>
+    <div class="prog-detail-grid">
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_who">Who It's For</h4>
+        <p data-i18n="services.d4_who">Patients recovering from traumatic brain injury (TBI), strokes (CVA), anoxic injury, brain aneurysm or bleed, who need both clinical management and rehabilitation in a calm, structured environment.</p>
+      </div>
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_includes">What's Included</h4>
+        <ul class="prog-detail-list">
+          <li data-i18n="services.d4_i1">Neurological monitoring &amp; assessment</li>
+          <li data-i18n="services.d4_i2">Speech-language therapy (cognition &amp; swallowing)</li>
+          <li data-i18n="services.d4_i3">Physical &amp; occupational therapy</li>
+          <li data-i18n="services.d4_i4">Seizure precautions &amp; medication management</li>
+          <li data-i18n="services.d4_i5">Family education &amp; emotional support</li>
+          <li data-i18n="services.d4_i6">Quiet, low-stimulation recovery environment</li>
+        </ul>
+      </div>
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_equipment">Equipment Used</h4>
+        <ul class="prog-detail-list">
+          <li data-i18n="services.d4_e1">Hill-Rom adjustable beds with side rails</li>
+          <li data-i18n="services.d4_e2">Stryker therapy &amp; mobility equipment</li>
+          <li data-i18n="services.d4_e3">Hoyer lifts for safe transfers</li>
+          <li data-i18n="services.d4_e4">Communication &amp; cognitive therapy tools</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+@* DETAIL: Rehab *@
+<section id="prog-rehab" class="sect sect-prog-detail">
+  <div class="hb-container">
+    <div class="prog-detail-header">
+      <span class="prog-detail-tag" data-i18n="services.tag_program">Program</span>
+      <h2 class="sect-heading" data-i18n="services.d5_heading">Rehabilitation Services</h2>
+      <p class="prog-detail-lead" data-i18n="services.d5_lead">A complete in-house therapy program with licensed physical, occupational, speech-language, and respiratory therapists working together.</p>
+    </div>
+    <div class="prog-detail-grid">
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_who">Who It's For</h4>
+        <p data-i18n="services.d5_who">Any patient whose recovery requires structured rehabilitation — from regaining mobility after surgery, to relearning daily living skills after injury, to recovering speech and swallowing function.</p>
+      </div>
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_includes">What's Included</h4>
+        <ul class="prog-detail-list">
+          <li data-i18n="services.d5_i1"><strong>Physical Therapy</strong> — strength, balance, mobility</li>
+          <li data-i18n="services.d5_i2"><strong>Occupational Therapy</strong> — daily living skills</li>
+          <li data-i18n="services.d5_i3"><strong>Speech-Language Therapy</strong> — communication &amp; swallowing</li>
+          <li data-i18n="services.d5_i4"><strong>Respiratory Therapy</strong> — breathing &amp; weaning</li>
+          <li data-i18n="services.d5_i5"><strong>Restorative Care</strong> — daily exercise &amp; movement</li>
+          <li data-i18n="services.d5_i6"><strong>Social Services</strong> — emotional &amp; community support</li>
+        </ul>
+      </div>
+      <div class="prog-detail-block">
+        <h4 data-i18n="services.lbl_equipment">Equipment Used</h4>
+        <ul class="prog-detail-list">
+          <li data-i18n="services.d5_e1">Stryker rehabilitation equipment</li>
+          <li data-i18n="services.d5_e2">Parallel bars &amp; gait training tools</li>
+          <li data-i18n="services.d5_e3">Hoyer lifts for safe mobility training</li>
+          <li data-i18n="services.d5_e4">Adaptive utensils &amp; daily-living aids</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+@* ── EQUIPMENT & TECHNOLOGY ── *@
+<section class="sect sect-equipment alt">
+  <div class="hb-container">
+    <div class="services-header">
+      <p class="sect-label" data-i18n="services.eq_label">Equipment &amp; Technology</p>
+      <h2 class="sect-heading" data-i18n="services.eq_heading">State-of-the-Art Tools, Hospital-Grade Care</h2>
+      <p class="services-subheading" data-i18n="services.eq_sub">
+        Our facility is outfitted with the same equipment trusted in major hospitals — chosen for safety,
+        comfort, and clinical excellence.
+      </p>
+    </div>
+
+    <div class="equipment-grid">
+      <div class="equipment-card equipment-card--featured">
+        <div class="equipment-brand" data-i18n="services.eq_brand1">Hill-Rom</div>
+        <h3 data-i18n="services.eq1_title">Hill-Rom Hospital Beds</h3>
+        <p data-i18n="services.eq1_body">Industry-leading hospital beds with pressure-relief surfaces, height adjustment, and integrated safety features. The same beds you'd find in major hospitals — chosen because they support faster wound healing, easier transfers, and more comfortable rest.</p>
+      </div>
+      <div class="equipment-card equipment-card--featured">
+        <div class="equipment-brand" data-i18n="services.eq_brand2">Stryker</div>
+        <h3 data-i18n="services.eq2_title">Stryker Medical Equipment</h3>
+        <p data-i18n="services.eq2_body">Trusted across hospitals and rehabilitation centers worldwide, Stryker equipment supports our therapy and mobility programs — from beds to therapy tools, every piece is engineered for clinical reliability.</p>
+      </div>
+      <div class="equipment-card equipment-card--featured">
+        <div class="equipment-brand" data-i18n="services.eq_brand3">Hoyer</div>
+        <h3 data-i18n="services.eq3_title">Hoyer Patient Lifts</h3>
+        <p data-i18n="services.eq3_body">Safe, dignified patient transfers with the gold-standard Hoyer lift system. Used by our team for everything from bed-to-chair moves to bathing, eliminating injury risk for both patients and staff.</p>
+      </div>
+
+      <div class="equipment-card">
+        <div class="equipment-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M32 14v40"/><path d="M22 24c-6 0-10 6-10 14s4 14 10 14 10-6 10-14"/><path d="M42 24c6 0 10 6 10 14s-4 14-10 14-10-6-10-14"/></svg>
+        </div>
+        <h3 data-i18n="services.eq4_title">Modern Ventilators</h3>
+        <p data-i18n="services.eq4_body">Full ventilator support with weaning capability, monitored 24/7 by our Respiratory Therapist.</p>
+      </div>
+      <div class="equipment-card">
+        <div class="equipment-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="20" r="10"/><path d="M32 30v24M22 40h20"/></svg>
+        </div>
+        <h3 data-i18n="services.eq5_title">VAC Wound Therapy</h3>
+        <p data-i18n="services.eq5_body">Vacuum-Assisted Closure systems that proven accelerate wound healing in complex cases.</p>
+      </div>
+      <div class="equipment-card">
+        <div class="equipment-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="22"/><path d="M22 32h6l4-8 4 16 4-8h6"/></svg>
+        </div>
+        <h3 data-i18n="services.eq6_title">Vital Sign Monitoring</h3>
+        <p data-i18n="services.eq6_body">Continuous monitoring of heart rate, oxygen saturation, blood pressure, and respiratory function.</p>
+      </div>
+      <div class="equipment-card">
+        <div class="equipment-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="14" width="24" height="36" rx="3"/><path d="M28 22h8M28 30h8M28 38h4"/></svg>
+        </div>
+        <h3 data-i18n="services.eq7_title">IV &amp; Medication Pumps</h3>
+        <p data-i18n="services.eq7_body">Precision infusion pumps for IV therapy, antibiotics, nutrition, and pain management.</p>
+      </div>
+      <div class="equipment-card">
+        <div class="equipment-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 32h32"/><path d="M16 32c0-8 6-14 14-14"/><path d="M48 32c0 8-6 14-14 14"/><circle cx="32" cy="32" r="4"/></svg>
+        </div>
+        <h3 data-i18n="services.eq8_title">Suction &amp; Oxygen Systems</h3>
+        <p data-i18n="services.eq8_body">Bedside suction and supplemental oxygen at every patient station for immediate availability.</p>
+      </div>
+      <div class="equipment-card">
+        <div class="equipment-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="22"/><path d="M32 18v14l10 6"/></svg>
+        </div>
+        <h3 data-i18n="services.eq9_title">Nurse Call Systems</h3>
+        <p data-i18n="services.eq9_body">Bedside call systems linked to our nurse station for instant response, day or night.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+@* ── MULTILINGUAL CARE STRIP ── *@
+<section class="sect sect-multilingual">
+  <div class="hb-container multilingual-inner">
+    <div class="multilingual-icon">
+      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="32" cy="32" r="22"/><path d="M10 32h44M32 10c6 6 10 14 10 22s-4 16-10 22c-6-6-10-14-10-22s4-16 10-22z"/>
+      </svg>
+    </div>
+    <div class="multilingual-text">
+      <h2 class="sect-heading" data-i18n="services.ml_heading">Care in Your Language</h2>
+      <p class="sect-body" data-i18n="services.ml_body">
+        Our team speaks <strong>English, Spanish, and French</strong> — so patients and families can always
+        feel heard, understood, and confident in the care they receive.
+      </p>
+    </div>
+    <div class="multilingual-flags">
+      <div class="ml-flag"><span class="ml-flag-emoji">🇺🇸</span><span data-i18n="services.ml_en">English</span></div>
+      <div class="ml-flag"><span class="ml-flag-emoji">🇪🇸</span><span data-i18n="services.ml_es">Español</span></div>
+      <div class="ml-flag"><span class="ml-flag-emoji">🇫🇷</span><span data-i18n="services.ml_fr">Français</span></div>
+    </div>
+  </div>
+</section>
+
+@* ── CONTRACTED CLINICAL & SUPPORT SERVICES ── *@
+<section class="sect sect-contracted alt">
+  <div class="hb-container">
+    <div class="services-header">
+      <p class="sect-label" data-i18n="services.cs_label">Contracted Services</p>
+      <h2 class="sect-heading" data-i18n="services.cs_heading">A Network of Trusted Specialists</h2>
+      <p class="services-subheading" data-i18n="services.cs_sub">
+        Beyond our in-house team, we partner with established specialty providers — so every patient
+        benefits from deep expertise across pharmacy, therapy, nutrition, social work, and more.
+      </p>
+    </div>
+
+    <div class="contracted-grid">
+      <div class="contracted-card">
+        <div class="contracted-tag" data-i18n="services.cs_t_pharmacy">Pharmacy</div>
+        <h3 data-i18n="services.cs1_n">Omnicare</h3>
+        <p data-i18n="services.cs1_b">Full-service long-term care pharmacy — medication dispensing, blister packing, and pharmacist consultation.</p>
+      </div>
+      <div class="contracted-card">
+        <div class="contracted-tag" data-i18n="services.cs_t_rehab">Physical / OT / Speech</div>
+        <h3 data-i18n="services.cs2_n">A+ Rehabilitation Services</h3>
+        <p data-i18n="services.cs2_b">Licensed PT, OT, and Speech Therapy — restorative and functional rehabilitation across all acuity levels.</p>
+      </div>
+      <div class="contracted-card">
+        <div class="contracted-tag" data-i18n="services.cs_t_nutrition">Nutrition / Dietitian</div>
+        <h3 data-i18n="services.cs3_n">360 Nutrition Consulting</h3>
+        <p data-i18n="services.cs3_b">Registered Dietitian services — individualized nutritional assessment, MNT, and care plan integration.</p>
+      </div>
+      <div class="contracted-card">
+        <div class="contracted-tag" data-i18n="services.cs_t_resp">Respiratory Therapy</div>
+        <h3 data-i18n="services.cs4_n">Aaron Villanueva, RCP</h3>
+        <p data-i18n="services.cs4_b">Contracted Respiratory Care Practitioner — ventilator management, trach care, equipment checks &amp; DME.</p>
+      </div>
+      <div class="contracted-card">
+        <div class="contracted-tag" data-i18n="services.cs_t_social">Social Work</div>
+        <h3 data-i18n="services.cs5_n">Brittany Michell, MSW/LCSW</h3>
+        <p data-i18n="services.cs5_b">Licensed Social Worker — discharge planning, community re-entry, psychosocial support, and family liaison.</p>
+      </div>
+      <div class="contracted-card">
+        <div class="contracted-tag" data-i18n="services.cs_t_dental">Dental Services</div>
+        <h3 data-i18n="services.cs6_n">William Dao Dental Group</h3>
+        <p data-i18n="services.cs6_b">Contracted dental care — preventive and restorative dental services for facility residents.</p>
+      </div>
+      <div class="contracted-card">
+        <div class="contracted-tag" data-i18n="services.cs_t_beauty">Beauty / Personal Care</div>
+        <h3 data-i18n="services.cs7_n">Beautiian</h3>
+        <p data-i18n="services.cs7_b">On-site personal care and grooming services supporting resident dignity, well-being, and quality of life.</p>
+      </div>
+      <div class="contracted-card">
+        <div class="contracted-tag" data-i18n="services.cs_t_transport">Transportation</div>
+        <h3 data-i18n="services.cs8_n">Amwest Transportation</h3>
+        <p data-i18n="services.cs8_b">Non-emergency medical transportation — community outings, medical appointments, and hospital visits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+@* ── COMPLIANCE & QUALITY ── *@
+<section class="sect sect-compliance">
+  <div class="hb-container">
+    <div class="services-header">
+      <p class="sect-label" data-i18n="services.cmp_label">Compliance &amp; Quality</p>
+      <h2 class="sect-heading" data-i18n="services.cmp_heading">Hospital-Grade Standards, Every Day</h2>
+      <p class="services-subheading" data-i18n="services.cmp_sub">
+        Healing Bridge Health operates under a rigorous regulatory framework — the same standards trusted
+        by major hospitals — so families can be confident their loved ones are in safe, accountable hands.
+      </p>
+    </div>
+
+    <div class="compliance-grid">
+      <div class="compliance-card">
+        <div class="compliance-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M32 6L8 16v14c0 14 10 24 24 28 14-4 24-14 24-28V16L32 6z"/><path d="M22 32l8 8 14-16"/>
+          </svg>
+        </div>
+        <h4 data-i18n="services.cmp1_t">CDPH Licensed (Title 22)</h4>
+        <p data-i18n="services.cmp1_b">Licensed Congregate Living Health Facility under California Department of Public Health, Title 22 regulations.</p>
+      </div>
+      <div class="compliance-card">
+        <div class="compliance-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="32" cy="32" r="22"/><path d="M22 32l8 8 14-16"/>
+          </svg>
+        </div>
+        <h4 data-i18n="services.cmp2_t">TJC &amp; CIHQ Standards</h4>
+        <p data-i18n="services.cmp2_b">Aligned with The Joint Commission and CIHQ accreditation standards for clinical quality and patient safety.</p>
+      </div>
+      <div class="compliance-card">
+        <div class="compliance-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="14" y="14" width="36" height="36" rx="3"/><path d="M22 26h20M22 34h20M22 42h12"/>
+          </svg>
+        </div>
+        <h4 data-i18n="services.cmp3_t">OSHA Compliance</h4>
+        <p data-i18n="services.cmp3_b">Full OSHA infection control, bloodborne pathogen, and workplace safety standards for staff and patients.</p>
+      </div>
+      <div class="compliance-card">
+        <div class="compliance-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="14" y="22" width="36" height="28" rx="3"/><path d="M22 22v-6a10 10 0 0 1 20 0v6"/>
+          </svg>
+        </div>
+        <h4 data-i18n="services.cmp4_t">HIPAA &amp; CMIA Privacy</h4>
+        <p data-i18n="services.cmp4_b">Strict patient privacy compliance under HIPAA and California's Confidentiality of Medical Information Act.</p>
+      </div>
+      <div class="compliance-card">
+        <div class="compliance-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="10" y="14" width="44" height="32" rx="3"/><path d="M22 26h20M22 34h12"/><circle cx="44" cy="36" r="4"/>
+          </svg>
+        </div>
+        <h4 data-i18n="services.cmp5_t">PointClickCare EHR</h4>
+        <p data-i18n="services.cmp5_b">Industry-leading electronic health records — full clinical documentation, eMAR, and real-time interdisciplinary communication.</p>
+      </div>
+      <div class="compliance-card">
+        <div class="compliance-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="32" cy="32" r="22"/><path d="M32 18v14l10 6"/>
+          </svg>
+        </div>
+        <h4 data-i18n="services.cmp6_t">Continuous Quality Improvement</h4>
+        <p data-i18n="services.cmp6_b">Ongoing IDT conferences, competency-based staff validation, incident reporting, and performance improvement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+@* ── FUNDING / INSURANCE ── *@
+<section id="funding" class="sect sect-funding alt">
+  <div class="hb-container grid-2 align-center grid-reverse">
+    <div class="col-text">
+      <p class="sect-label" data-i18n="services.funding_label">Funding Options</p>
+      <h2 class="sect-heading" data-i18n="services.funding_heading">Quality Care, Accessible Funding</h2>
+      <p class="sect-body" data-i18n="services.funding_body">
+        We strive to provide a higher quality of care at a lower cost alternative, working closely with a
+        variety of payors—including private insurance companies and workers' compensation specialists.
+      </p>
+      <ul class="funding-list">
+        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="services.f1">Workers' Compensation</span></li>
+        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="services.f2">Private Insurance</span></li>
+        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="services.f3">Private Pay</span></li>
+        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="services.f4">Medicare</span></li>
+        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="services.f5">Medicaid (state &amp; federally funded)</span></li>
+      </ul>
+    </div>
+    <div class="col-media">
+      <img src="/Media/HEALTHFUNDING.jpg" alt="Care services" class="sect-img" />
+    </div>
+  </div>
+</section>
+
+@* ── ADMISSIONS PROCESS ── *@
+<section id="admissions" class="sect sect-admissions">
+  <div class="hb-container">
+    <div class="services-header">
+      <p class="sect-label" data-i18n="services.adm_label">Admissions</p>
+      <h2 class="sect-heading" data-i18n="services.adm_heading">A Simple 4-Step Referral Process</h2>
+      <p class="services-subheading" data-i18n="services.adm_sub">
+        We accept referrals 24/7 from hospitals, case managers, physicians, and families. Here's what to expect.
+      </p>
+    </div>
+
+    <div class="admissions-steps">
+      <div class="admissions-step">
+        <div class="admissions-num">01</div>
+        <h3 data-i18n="services.adm1_t">Refer</h3>
+        <p data-i18n="services.adm1_b">Hospital discharge planners, physicians, case managers, or family members can initiate a referral by calling or faxing patient information.</p>
+        <div class="admissions-meta" data-i18n="services.adm1_meta">Phone or fax — 24/7</div>
+      </div>
+      <div class="admissions-step">
+        <div class="admissions-num">02</div>
+        <h3 data-i18n="services.adm2_t">Assess</h3>
+        <p data-i18n="services.adm2_b">Our clinical team reviews medical records, current condition, and care needs to confirm we're the right fit and determine the appropriate level of care.</p>
+        <div class="admissions-meta" data-i18n="services.adm2_meta">Same-day response</div>
+      </div>
+      <div class="admissions-step">
+        <div class="admissions-num">03</div>
+        <h3 data-i18n="services.adm3_t">Admit</h3>
+        <p data-i18n="services.adm3_b">We coordinate transportation, room preparation, and admission paperwork — and meet the patient and family on arrival to ensure a calm transition.</p>
+        <div class="admissions-meta" data-i18n="services.adm3_meta">Coordinated handoff</div>
+      </div>
+      <div class="admissions-step">
+        <div class="admissions-num">04</div>
+        <h3 data-i18n="services.adm4_t">Care</h3>
+        <p data-i18n="services.adm4_b">Our interdisciplinary care team begins delivering the personalized care plan, with family kept informed every step of the way.</p>
+        <div class="admissions-meta" data-i18n="services.adm4_meta">Day one and beyond</div>
+      </div>
+    </div>
+
+    <div class="admissions-contact">
+      <div class="admissions-contact-card">
+        <p class="adm-c-label" data-i18n="services.adm_phone_l">Referral Phone</p>
+        <a href="tel:+17472717001" class="adm-c-value">(747) 271-7001</a>
+      </div>
+      <div class="admissions-contact-card">
+        <p class="adm-c-label" data-i18n="services.adm_fax_l">Referral Fax</p>
+        <span class="adm-c-value">(747) 271-7009</span>
+      </div>
+      <div class="admissions-contact-card">
+        <p class="adm-c-label" data-i18n="services.adm_email_l">Email</p>
+        <a href="mailto:info@healingbridgehealth.com" class="adm-c-value">info@healingbridgehealth.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+@* ── CTA ── *@
+<section class="sect sect-cta">
+  <div class="hb-container cta-inner">
+    <h2 class="cta-heading" data-i18n="services.cta_heading">Have a Question About a Program?</h2>
+    <a href="/contact" class="btn-hero btn-hero--white" data-i18n="cta.btn">Contact Us</a>
+  </div>
+</section>

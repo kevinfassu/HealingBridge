@@ -1,0 +1,147 @@
+@page "/contact"
+<PageTitle>Contact Us — Healing Bridge Health</PageTitle>
+
+@* ── PAGE HERO ── *@
+<section class="page-hero">
+  <div class="hb-container page-hero-inner">
+    <p class="hero-label" data-i18n="ct.label">GET IN TOUCH</p>
+    <h1 class="page-hero-title" data-i18n="ct.title">Contact Healing Bridge Health</h1>
+    <p class="page-hero-sub" data-i18n="ct.sub">
+      Have a question, want a tour, or ready for a referral? We're here to help.
+    </p>
+  </div>
+</section>
+
+@* ── CONTACT CARDS ── *@
+<section class="sect sect-contact-cards">
+  <div class="hb-container">
+    <div class="contact-cards">
+      <a href="tel:+17472717001" class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3 data-i18n="ct.c1_label">Phone</h3>
+        <p class="contact-value">(747) 271-7001</p>
+        <span class="contact-link" data-i18n="ct.c1_cta">Call now &rarr;</span>
+      </a>
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        </div>
+        <h3 data-i18n="ct.c2_label">Fax</h3>
+        <p class="contact-value">(747) 271-7009</p>
+        <span class="contact-link" data-i18n="ct.c2_cta">Fax referrals 24/7</span>
+      </div>
+
+      <a href="mailto:info@healingbridgehealth.com" class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3 data-i18n="ct.c3_label">Email</h3>
+        <p class="contact-value">info@healingbridgehealth.com</p>
+        <span class="contact-link" data-i18n="ct.c3_cta">Send us a note &rarr;</span>
+      </a>
+
+      <a href="https://maps.google.com/?q=8061+St+Clair+Ave,+North+Hollywood,+CA+91605" target="_blank" rel="noopener" class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 data-i18n="ct.c4_label">Visit Us</h3>
+        <p class="contact-value">8061 N. Saint Clair Avenue<br/>North Hollywood, CA 91605</p>
+        <span class="contact-link" data-i18n="ct.c4_cta">Get directions &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+@* ── FORM + MAP ── *@
+<section class="sect sect-contact-main">
+  <div class="hb-container contact-main-grid">
+
+    @* Form *@
+    <div class="contact-form-wrap">
+      <p class="sect-label" data-i18n="ct.form_label">Send a Message</p>
+      <h2 class="sect-heading" data-i18n="ct.form_heading">We'd Love to Hear From You</h2>
+      <p class="sect-body" data-i18n="ct.form_body">
+        Whether you're a patient, family member, case manager, or healthcare partner — our team will get back
+        to you as quickly as possible.
+      </p>
+
+      @if (FormSent)
+      {
+        <div class="form-success-box">
+          <div class="form-success-icon">✓</div>
+          <h3>Message Sent!</h3>
+          <p>Thank you for reaching out. We'll be in touch shortly.</p>
+        </div>
+      }
+      else
+      {
+        <div class="contact-form">
+          <div class="field-row">
+            <label>
+              <span>Full Name</span>
+              <input type="text" placeholder="Jane Smith" @bind="FormName" />
+            </label>
+            <label>
+              <span>Phone <span class="field-optional">(optional)</span></span>
+              <input type="tel" placeholder="(818) 555-0000" @bind="FormPhone" />
+            </label>
+          </div>
+          <label>
+            <span>Email Address</span>
+            <input type="email" placeholder="jane@example.com" @bind="FormEmail" />
+          </label>
+          <label>
+            <span>I'm contacting about&hellip;</span>
+            <select @bind="FormSubject">
+              <option>A patient referral</option>
+              <option>Scheduling a tour</option>
+              <option>Insurance &amp; funding questions</option>
+              <option>Career opportunities</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea rows="5" placeholder="Tell us how we can help..." @bind="FormMessage"></textarea>
+          </label>
+          @if (!string.IsNullOrEmpty(FormError))
+          {
+            <p class="form-error">@FormError</p>
+          }
+          <button type="button" class="btn-hero btn-hero--filled" @onclick="HandleSubmit" disabled="@Submitting">
+            @(Submitting ? "Sending…" : "Send Message →")
+          </button>
+        </div>
+      }
+    </div>
+
+    @* Map + hours *@
+    <div class="contact-map-wrap">
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps?q=8061+St+Clair+Ave,+North+Hollywood,+CA+91605&output=embed"
+          width="100%" height="100%" style="border:0;" allowfullscreen=""
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Healing Bridge Health location">
+        </iframe>
+      </div>
+      <div class="hours-card">
+        <h3 data-i18n="ct.hours_heading">Visiting Hours</h3>
+        <p class="hours-time" data-i18n="ct.hours_time">11:30 AM – 7:00 PM, daily</p>
+        <p class="hours-note" data-i18n="ct.hours_note">Care services and referrals available 24/7.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+@* ── CTA ── *@
+<section class="sect sect-cta">
+  <div class="hb-container cta-inner">
+    <h2 class="cta-heading" data-i18n="ct.cta_heading">Need a Faster Reply? <strong>Call us directly.</strong></h2>
+    <a href="tel:+17472717001" class="btn-hero btn-hero--white" data-i18n="ct.cta_btn">(747) 271-7001</a>
+  </div>
+</section>

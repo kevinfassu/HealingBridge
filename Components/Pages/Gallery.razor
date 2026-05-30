@@ -1,0 +1,167 @@
+@page "/gallery"
+@using System.Collections.Generic
+@using System.Linq
+
+<PageTitle>Gallery — Healing Bridge Health</PageTitle>
+
+@* ── PAGE HERO ── *@
+<section class="page-hero">
+  <div class="hb-container page-hero-inner">
+    <p class="hero-label" data-i18n="gal.label">A LOOK INSIDE</p>
+    <h1 class="page-hero-title" data-i18n="gal.title">Photo Gallery</h1>
+    <p class="page-hero-sub" data-i18n="gal.sub">
+      Step inside Healing Bridge Health — our welcoming spaces, comfortable bedrooms, and care-centered design.
+    </p>
+  </div>
+</section>
+
+@* ── FILTER + GRID ── *@
+<section class="sect sect-gallery">
+  <div class="hb-container">
+
+    @* Filter pills — wired to Blazor @onclick *@
+    <div class="gallery-filters">
+      @foreach (var f in Filters)
+      {
+        <button type="button"
+                class="@(f.Key == ActiveFilter ? "filter-pill is-active" : "filter-pill")"
+                @onclick="() => SetFilter(f.Key)">
+          @f.Label
+        </button>
+      }
+    </div>
+
+    @* Photo grid — only renders matching items *@
+    <div class="gallery-grid">
+      @foreach (var (photo, i) in VisiblePhotos().Select((p, i) => (p, i)))
+      {
+        <figure class="gallery-item" @onclick="() => OpenLightbox(i)">
+          <img src="@photo.Src" alt="@photo.Alt" loading="lazy" />
+        </figure>
+      }
+    </div>
+
+  </div>
+</section>
+
+@* ── LIGHTBOX ── *@
+@if (LightboxOpen)
+{
+  <div class="lightbox-overlay" @onclick="CloseLightbox">
+    <button class="lb-close" type="button" @onclick:stopPropagation="true" @onclick="CloseLightbox">&times;</button>
+    <button class="lb-prev"  type="button" @onclick:stopPropagation="true" @onclick="PrevPhoto">&#8249;</button>
+    <button class="lb-next"  type="button" @onclick:stopPropagation="true" @onclick="NextPhoto">&#8250;</button>
+    <div class="lb-stage" @onclick:stopPropagation="true">
+      <img src="@LightboxSrc" alt="@LightboxAlt" />
+    </div>
+    <div class="lb-counter">@(LightboxIndex + 1) / @VisiblePhotos().Count</div>
+  </div>
+}
+
+@* ── CTA ── *@
+<section class="sect sect-cta">
+  <div class="hb-container cta-inner">
+    <h2 class="cta-heading" data-i18n="cta.heading">Your Journey to Healing <strong>Begins Here&hellip;</strong></h2>
+    <a href="/contact" class="btn-hero btn-hero--white" data-i18n="cta.btn">Contact Us</a>
+  </div>
+</section>
+
+@code {
+  // ── Data ──────────────────────────────────────────────
+  record Photo(string Src, string Alt, string Cat);
+
+  private readonly List<Photo> AllPhotos = new()
+  {
+    // Lobby
+    new("/Media/IMG_3325.jpeg", "Reception lobby with seating area",        "lobby"),
+    new("/Media/IMG_3326.jpeg", "Reception desk and waiting area",          "lobby"),
+    new("/Media/IMG_3327.jpeg", "Lobby entrance and reception",             "lobby"),
+    // Rooms
+    new("/Media/IMG_3277.jpeg", "Private patient room with Hill-Rom bed",   "rooms"),
+    new("/Media/IMG_3278.jpeg", "Patient room with Stryker bed",            "rooms"),
+    new("/Media/IMG_3279.jpeg", "Semi-private room",                        "rooms"),
+    new("/Media/IMG_3287.jpeg", "Patient bedroom with TV",                  "rooms"),
+    new("/Media/IMG_3288.jpeg", "Private room with artwork",                "rooms"),
+    new("/Media/IMG_3289.jpeg", "Patient room with lounge seating",         "rooms"),
+    new("/Media/IMG_3292.jpeg", "Semi-private room with divider",           "rooms"),
+    new("/Media/IMG_3293.jpeg", "Private room with nightstand",             "rooms"),
+    new("/Media/IMG_3294.jpeg", "Patient room with Stryker bed close-up",   "rooms"),
+    new("/Media/IMG_3301.jpeg", "Room with two beds",                       "rooms"),
+    new("/Media/IMG_3302.jpeg", "Private room with landscape art",          "rooms"),
+    new("/Media/IMG_3304.jpeg", "Patient room overview",                    "rooms"),
+    // Kitchen
+    new("/Media/IMG_3311.jpeg", "Fully equipped kitchen with marble backsplash", "kitchen"),
+    new("/Media/IMG_3312.jpeg", "Kitchen with Samsung refrigerator",        "kitchen"),
+    new("/Media/IMG_3313.jpeg", "Kitchen countertop and appliances",        "kitchen"),
+    new("/Media/IMG_3314.jpeg", "Kitchen stove and dishwasher",             "kitchen"),
+    new("/Media/IMG_3315.jpeg", "Kitchen overview",                         "kitchen"),
+    // Common
+    new("/Media/IMG_3272.jpeg", "Common dining area with glass table",      "common"),
+    new("/Media/IMG_3273.jpeg", "Dining and common room",                   "common"),
+    new("/Media/IMG_3317.jpeg", "Nurse station and common area",            "common"),
+    new("/Media/IMG_3319.jpeg", "Common area with dining table",            "common"),
+    new("/Media/IMG_3320.jpeg", "Common room overview with kitchen view",   "common"),
+    new("/Media/IMG_3321.jpeg", "Common dining area",                       "common"),
+    // Outdoor
+    new("/Media/IMG_3282.jpeg", "Facility exterior with therapeutic garden","outdoor"),
+  };
+
+  record FilterDef(string Key, string Label);
+  private readonly List<FilterDef> Filters = new()
+  {
+    new("all",     "All"),
+    new("lobby",   "Lobby & Reception"),
+    new("rooms",   "Patient Rooms"),
+    new("kitchen", "Kitchen & Dining"),
+    new("common",  "Common Areas"),
+    new("outdoor", "Exterior"),
+  };
+
+  // ── State ─────────────────────────────────────────────
+  private string ActiveFilter  = "all";
+  private bool   LightboxOpen  = false;
+  private int    LightboxIndex = 0;
+  private string LightboxSrc   = "";
+  private string LightboxAlt   = "";
+
+  // ── Helpers ───────────────────────────────────────────
+  private List<Photo> VisiblePhotos() =>
+    ActiveFilter == "all"
+      ? AllPhotos
+      : AllPhotos.Where(p => p.Cat == ActiveFilter).ToList();
+
+  // ── Handlers ──────────────────────────────────────────
+  private void SetFilter(string filter)
+  {
+    ActiveFilter  = filter;
+    LightboxOpen  = false;
+  }
+
+  private void OpenLightbox(int index)
+  {
+    var visible    = VisiblePhotos();
+    if (!visible.Any()) return;
+    LightboxIndex  = index;
+    LightboxSrc    = visible[index].Src;
+    LightboxAlt    = visible[index].Alt;
+    LightboxOpen   = true;
+  }
+
+  private void CloseLightbox() => LightboxOpen = false;
+
+  private void PrevPhoto()
+  {
+    var visible   = VisiblePhotos();
+    LightboxIndex = (LightboxIndex - 1 + visible.Count) % visible.Count;
+    LightboxSrc   = visible[LightboxIndex].Src;
+    LightboxAlt   = visible[LightboxIndex].Alt;
+  }
+
+  private void NextPhoto()
+  {
+    var visible   = VisiblePhotos();
+    LightboxIndex = (LightboxIndex + 1) % visible.Count;
+    LightboxSrc   = visible[LightboxIndex].Src;
+    LightboxAlt   = visible[LightboxIndex].Alt;
+  }
+}

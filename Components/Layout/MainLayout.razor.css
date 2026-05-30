@@ -1,0 +1,248 @@
+/* shell */
+.hb-main { padding: 0; margin: 0; }
+.page, .sidebar, .top-row { display: none !important; background: none !important; box-shadow: none !important; border: 0 !important; }
+
+/* ====== FOOTER ====== */
+.hb-footer {
+  background: #1a1f25;
+  color: rgba(255, 255, 255, 0.8);
+  padding-top: 4rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1.2fr;
+  gap: 3rem;
+}
+
+/* Col 1: brand */
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.footer-logo img {
+  height: 56px;
+  width: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+.footer-addr {
+  font-style: normal;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.footer-addr a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+}
+.footer-addr a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* socials */
+.footer-socials {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.social-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.social-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.social-icon:hover {
+  background: var(--brand, #1a6b4a);
+  border-color: var(--brand, #1a6b4a);
+  color: #fff;
+}
+
+/* Col 2: links */
+.footer-heading {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 36px;
+  height: 2.5px;
+  background: var(--brand, #1a6b4a);
+  border-radius: 2px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.45rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s, padding-left 0.2s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  padding-left: 4px;
+}
+
+/* Col 3: form */
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-form input,
+.footer-form textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.footer-form input::placeholder,
+.footer-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-form input:focus,
+.footer-form textarea:focus {
+  outline: none;
+  border-color: var(--brand, #1a6b4a);
+}
+
+.btn-submit {
+  background: var(--brand, #1a6b4a);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.65rem 1.5rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.25s;
+}
+
+.btn-submit:hover {
+  background: var(--brand-700, #117a42);
+}
+
+/* bottom bar */
+.footer-bottom {
+  margin-top: 3rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* responsive footer */
+@media (max-width: 991px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-form-wrap {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hb-footer { padding-top: 2.5rem; }
+}
+
+/* ── Footer form success state ── */
+.footer-success {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  animation: fadeSlideUp 0.4s ease both;
+}
+.footer-success-icon {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  color: #1a6b4a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.footer-success p {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+}
+.footer-error {
+  color: #fca5a5;
+  font-size: 0.825rem;
+  margin: 0;
+}
+
+/* ── Smooth fade-up animation ── */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Disable state for submit button ── */
+.btn-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
