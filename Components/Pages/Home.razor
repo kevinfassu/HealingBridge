@@ -22,7 +22,10 @@
 
     @* Right column: looping video *@
     <div class="hero-slideshow">
-      <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+      <video autoplay muted loop playsinline 
+            style="width:100%;height:100%;object-fit:cover;display:block;"
+            preload="auto"
+            oncanplay="this.play()">
         <source src="/Media/MainVideo2_web.mp4" type="video/mp4" />
       </video>
     </div>
