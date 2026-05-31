@@ -25,6 +25,9 @@ public partial class Home : ComponentBase
         if (firstRender)
         {
             await JS.InvokeVoidAsync("HBApp.init");
+            // Give Blazor a moment to fully hydrate, then force video play
+            await Task.Delay(300);
+            await JS.InvokeVoidAsync("eval", "var v = document.querySelector('video'); if(v) { v.load(); v.play().catch(()=>{}); }");
         }
     }
 }
