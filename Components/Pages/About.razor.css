@@ -1,9 +1,4 @@
-/* ================================================================
-   ABOUT.RAZOR.CSS — fully self-contained scoped CSS
-   No dependency on pages.css. Every rule needed for About lives here.
-   The .reveal class has been removed from About.razor entirely;
-   content is always visible — no JS-driven fade-in needed.
-   ================================================================ */
+
 
 /* =================================================================
    PAGE HERO — top strip on every subpage
@@ -62,6 +57,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 0.6rem;
+  text-align: center;
 }
 .sect-heading {
   font-size: clamp(1.9rem, 3.5vw, 2.75rem);
@@ -69,12 +65,14 @@
   color: var(--ink, #1f2937);
   line-height: 1.15;
   margin: 0 0 0.65rem;
+  text-align: center;
 }
 .sect-body {
   font-size: 1.1rem;
   line-height: 1.85;
   color: var(--ink, #1f2937);
   margin: 0 0 1.75rem;
+  text-align: center;
 }
 
 /* Featured photo — small, supporting role */
@@ -88,7 +86,7 @@
   display: block;
 }
 .col-media {
-  max-width: 380px;
+  max-width: 470px;
   width: 100%;
 }
 .grid-2:not(.grid-reverse) .col-media { margin-right: auto; }

@@ -27,14 +27,16 @@
   text-transform: uppercase;
   letter-spacing: 0.14em;
   margin: 0 0 1rem;
+  text-align: center;
 }
 
 .hero-title {
   color: var(--ink, #1f2937);
-  font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+  font-size: clamp(2.4rem, 4.5vw, 2.5rem);
   font-weight: 800;
   line-height: 1.1;
   margin: 0 0 1.25rem;
+  text-align: center;
 }
 
 .hero-body {
@@ -42,6 +44,7 @@
   font-size: 1.15rem;
   line-height: 1.8;
   margin: 0 0 2.25rem;
+  text-align: center;
 }
 
 .hero-btns {
@@ -189,6 +192,7 @@
   color: var(--ink, #1f2937);
   line-height: 1.15;
   margin: 0 0 0.65rem;
+  text-align: center;
 }
 
 .sect-subheading {
@@ -197,6 +201,7 @@
   color: var(--ink-dim, #6b7280);
   line-height: 1.5;
   margin: 0 0 1.25rem;
+  text-align: center;
 }
 
 .sect-body {
@@ -204,6 +209,7 @@
   line-height: 1.85;
   color: var(--ink, #1f2937);
   margin: 0 0 1.75rem;
+  text-align: center;
 }
 
 .sect-img {
